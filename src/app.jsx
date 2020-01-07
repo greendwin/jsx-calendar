@@ -10,9 +10,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <TextBox className="date-selector" value={today} setValue={setToday} />
-
       <Calendar today={today} />
+      <TextBox className="date-selector" value={today} setValue={setToday} />
     </div>
   );
 };
