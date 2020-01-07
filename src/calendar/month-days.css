@@ -31,7 +31,7 @@
 
 .day:hover,
 .day:active {
-  border: 1px solid orangered;
+  border: 1px solid #bf613f;
 }
 
 .day-dummy,
