@@ -12,16 +12,21 @@ const WeekdayLabel = ({ caption, holiday }) => (
   </div>
 );
 
-const Day = ({ nmb, holiday, today }) => (
+const Day = ({ nmb, today, selected, onClick }) => (
   <Button
     caption={nmb}
-    className={clsx("day", { "day-holiday": holiday }, { "day-today": today })}
+    className={clsx(
+      "day",
+      { "day-today": today },
+      { "day-selected": selected }
+    )}
+    onClick={onClick}
   />
 );
 
 const DummyDay = ({ nmb }) => <div className="day day-dummy">{nmb}</div>;
 
-const createDays = viewDate => {
+const createDays = (viewDate, selectedDate, setSelectedDate) => {
   const days = [];
 
   const today = moment();
@@ -34,12 +39,14 @@ const createDays = viewDate => {
   for (let week = 0; week < 6; week += 1) {
     for (let k = 0; k < 7; ++k, cur.add(1, "day")) {
       if (cur.month() === viewDate.month()) {
+        const next = cur.clone();
         days.push(
           <Day
             key={days.length}
             nmb={cur.date()}
-            holiday={k % 7 === 6 || k % 7 === 0}
             today={cur.isSame(today)}
+            selected={cur.isSame(selectedDate)}
+            onClick={() => setSelectedDate(next)}
           />
         );
       } else {
@@ -51,8 +58,11 @@ const createDays = viewDate => {
   return days;
 };
 
-const MonthDays = ({ viewDate }) => {
-  const days = useMemo(() => createDays(viewDate), [viewDate]);
+const MonthDays = ({ viewDate, selectedDate, setSelectedDate }) => {
+  const days = useMemo(
+    () => createDays(viewDate, selectedDate, setSelectedDate),
+    [viewDate, selectedDate, setSelectedDate]
+  );
 
   return (
     <div className="month-days">

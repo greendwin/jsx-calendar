@@ -54,3 +54,21 @@
   background-color: #ffa332;
   border: 1px solid royalblue;
 }
+
+.day-selected,
+.day-selected:hover,
+.day-selected:active {
+  color: white;
+  background-color: steelblue;
+  border: 2px solid #1b3245;
+  margin: -1px; /* compensate increased border */
+}
+
+.day-selected.day-today,
+.day-selected.day-today:hover,
+.day-selected.day-today:active {
+  color: white;
+  background-color: darkorange;
+  border: 2px solid #7f4600;
+  margin: -1px; /* compensate increased border */
+}

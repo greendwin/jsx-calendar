@@ -33,7 +33,8 @@
   font-size: 0.8rem;
   background-color: white;
   text-align: center;
-  border-bottom: 1px solid #395b88;
+  /* border-bottom: 1px solid #395b88; */
+  border-bottom: 1px solid #afc3dd;
 }
 
 .dropdown-item:hover,

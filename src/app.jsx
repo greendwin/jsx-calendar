@@ -6,12 +6,16 @@ import TextBox from "./controls/text-box";
 import "./app.css";
 
 const App = () => {
-  const [today, setToday] = useState(moment().format("YYYY-MM-DD"));
+  const [today, setToday] = useState(() => moment());
 
   return (
     <div className="app">
-      <Calendar today={today} />
-      <TextBox className="date-selector" value={today} setValue={setToday} />
+      <Calendar value={today} setValue={setToday} />
+      <TextBox
+        className="date-selector"
+        value={today.format("YYYY-MM-DD")}
+        setValue={text => setToday(moment(text))}
+      />
     </div>
   );
 };
