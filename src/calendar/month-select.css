@@ -8,10 +8,15 @@
 
 .month-select-group {
   flex: 1;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 .month-select-month {
   font-size: 1rem;
+  align-self: stretch;
 }
 
 .month-select-year {
