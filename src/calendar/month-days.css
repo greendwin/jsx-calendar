@@ -40,6 +40,7 @@
   border: none;
   color: lightgray;
   user-select: none;
+  border: 1px solid transparent; /* add empty border to match other day cells */
 }
 
 .day-today {
