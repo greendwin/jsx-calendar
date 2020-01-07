@@ -7,7 +7,14 @@ const Button = ({ caption, onClick, className, children }) => (
     role="button"
     tabIndex="0"
     className={clsx("button", className)}
-    onClick={onClick}
+    onClick={e => {
+      if (onClick) {
+        onClick();
+      }
+
+      // consume this click
+      e.stopPropagation();
+    }}
   >
     {caption}
     {children}

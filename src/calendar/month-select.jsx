@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Button from "../controls/button";
+import Dropdown from "../controls/dropdown";
 
 import "./month-select.css";
+import moment from "moment";
 
 const MonthSelect = ({ viewDate, setViewDate }) => {
   const subtractMonth = () => {
@@ -12,13 +14,31 @@ const MonthSelect = ({ viewDate, setViewDate }) => {
     setViewDate(d => d.clone().add(1, "month"));
   };
 
+  const currentMonth = viewDate.format("MMMM");
+
+  const monthNames = useMemo(() => {
+    const r = [];
+    const month = moment();
+    month.startOf("year");
+
+    for (var k = 0; k < 12; k += 1) {
+      r.push(month.format("MMMM"));
+      month.add(1, "month");
+    }
+
+    return r;
+  }, []);
+
   return (
     <div className="month-select">
       <Button caption="<" onClick={subtractMonth} />
       <div className="month-select-group">
-        <Button className="month-select-month">
-          {viewDate.format("MMMM")}
-        </Button>
+        <Dropdown
+          className={"month-select-month"}
+          options={monthNames}
+          value={currentMonth}
+          setValue={name => setViewDate(d => d.clone().month(name))}
+        />
         <Button className="month-select-year">{viewDate.format("YYYY")}</Button>
       </div>
       <Button caption=">" onClick={addMonth} />
