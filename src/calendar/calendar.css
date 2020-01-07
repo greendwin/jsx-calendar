@@ -1,0 +1,62 @@
+/* calendar */
+.calendar {
+  padding: 0.2em;
+  border: 1px solid indigo;
+}
+
+.calendar-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 0.2em;
+}
+
+.month-year-group {
+  /* border: 1px dashed yellowgreen; */
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-month {
+  font-size: 1rem;
+}
+
+.calendar-year {
+  font-size: 0.6rem;
+  margin-bottom: -0.2em;
+}
+
+.month-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  font-size: 0.7rem;
+}
+
+.weekday {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.weekday-holiday {
+  color: brown;
+}
+
+.day {
+  border: 1px dotted goldenrod;
+
+  /* make days squares */
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.day-today {
+  color: white;
+  background-color: darkorange;
+}

@@ -1,0 +1,15 @@
+.button {
+  /* border: 1px solid tan; */
+  padding: 0.1em 0.4em;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover,
+.button:active {
+  background-color: lightsteelblue;
+  color: black;
+  cursor: pointer;
+}
