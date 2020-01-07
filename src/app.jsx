@@ -6,7 +6,7 @@ import TextBox from "./controls/text-box";
 import "./app.css";
 
 const App = () => {
-  const [today, setToday] = useState(moment().format("DD.MM.YYYY"));
+  const [today, setToday] = useState(moment().format("YYYY-MM-DD"));
 
   return (
     <div className="app">
