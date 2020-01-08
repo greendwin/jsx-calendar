@@ -3,7 +3,7 @@
 }
 
 .dropdown-active .dropdown-button {
-  margin: -1px 0; /* compensate border */
+  margin-top: -1px; /* compensate border */
   border: 1px solid #395b88;
   border-bottom: none;
 }
