@@ -1,0 +1,20 @@
+.button-textbox {
+  font-family: inherit;
+  text-align: center;
+  width: 3.5em;
+  border: none;
+}
+
+.button-textbox:hover,
+.button-textbox:active {
+  background-color: lightsteelblue;
+  cursor: pointer;
+}
+
+.button-textbox:focus {
+  background-color: white;
+  cursor: text;
+  outline: none;
+  border: 1px solid #395b88;
+  margin: -1px;
+}

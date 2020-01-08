@@ -23,5 +23,10 @@
 
 .month-select-year {
   font-size: 0.6rem;
+  width: 3em;
   margin-bottom: -0.25em;
+}
+
+.month-select-year:focus {
+  margin-bottom: calc(-0.25em - 1px);
 }

@@ -5,6 +5,7 @@
 .dropdown-active .dropdown-button {
   margin: -1px 0; /* compensate border */
   border: 1px solid #395b88;
+  border-bottom: none;
 }
 
 .dropdown-active .dropdown-button:hover {

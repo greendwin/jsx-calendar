@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import Button from "../controls/button";
+import ButtonTextBox from "../controls/button-text-box";
 import Dropdown from "../controls/dropdown";
 
 import "./month-select.css";
@@ -39,7 +40,11 @@ const MonthSelect = ({ viewDate, setViewDate }) => {
           value={currentMonth}
           setValue={name => setViewDate(d => d.clone().month(name))}
         />
-        <Button className="month-select-year">{viewDate.format("YYYY")}</Button>
+        <ButtonTextBox
+          className="month-select-year"
+          value={viewDate.format("YYYY")}
+          setValue={y => setViewDate(viewDate.clone().year(y))}
+        />
       </div>
       <Button caption=">" onClick={addMonth} />
     </div>
