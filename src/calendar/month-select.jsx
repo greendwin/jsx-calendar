@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import Button from "../controls/button";
-import ButtonTextBox from "../controls/button-text-box";
+import ButtonTextBox from "../controls/button-textbox";
 import Dropdown from "../controls/dropdown";
 
 import "./month-select.css";
