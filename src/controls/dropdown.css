@@ -30,11 +30,16 @@
 }
 
 .dropdown-item {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   background-color: white;
   text-align: center;
-  /* border-bottom: 1px solid #395b88; */
   border-bottom: 1px solid #afc3dd;
+}
+
+.dropdown-item:last-child {
+  border-bottom-left-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+  border-bottom: 1px solid #395b88;
 }
 
 .dropdown-item:hover,
@@ -45,7 +50,6 @@
 
 .dropdown-item-selected {
   font-weight: 700;
-  color: black;
   background-color: #afc3dd;
 }
 

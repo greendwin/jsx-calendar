@@ -12,6 +12,8 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+
+  margin: 0 0.1em;
 }
 
 .month-select-month {
@@ -21,5 +23,5 @@
 
 .month-select-year {
   font-size: 0.6rem;
-  margin-bottom: -0.2em;
+  margin-bottom: -0.25em;
 }

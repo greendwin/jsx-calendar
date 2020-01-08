@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import clsx from "clsx";
 import Button from "./button";
 
@@ -6,6 +6,14 @@ import "./dropdown.css";
 
 const Dropdown = ({ value, setValue, options, className }) => {
   const [showOptions, setShowOptions] = useState(false);
+  const lastValue = useRef(value);
+
+  if (showOptions && value !== lastValue.current) {
+    // hide options if value was changed outside of this control
+    setShowOptions(false);
+  }
+
+  lastValue.current = value;
 
   return (
     <div
